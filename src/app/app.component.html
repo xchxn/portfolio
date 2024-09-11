@@ -34,3 +34,26 @@
   </nav>
 </div>
 <router-outlet></router-outlet>
+<footer>
+  <!-- 
+    1. 코어 열기
+    2. 슬라이드 토글 설정
+    3. 언어 메뉴 드롭다운
+  -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
+    <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+      <!-- <p><mat-slide-toggle labelPosition="before">Dark Mode</mat-slide-toggle></p>
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          @for (food of foods; track food) {
+          <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field> -->
+    </mat-menu>
+  </div>
+</footer>
