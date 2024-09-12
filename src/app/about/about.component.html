@@ -1,2 +1,85 @@
 <p>about works!</p>
-<a href="/skills">Go</a>
+
+<mat-card class="profile-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>정석찬</mat-card-title>
+    <mat-card-subtitle>웹개발자</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/portfolio/id_image.jpg" alt="Profile-Image">
+  <mat-card-content>
+    <p>
+      꿈꾸고 상상하기를 좋아하는 개발자
+      정석찬입니다.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>좋아요</button>
+    <button mat-button>공유하기</button>
+  </mat-card-actions>
+</mat-card>
+
+<div>
+  <mat-card class="profile-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>프로필</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>이름: 정석찬</p>
+      <p>생년월일: 2000월 01월 26일</p>
+      <p>나이: 24세</p>
+      <p>MBTI: INFJ</p>
+    </mat-card-content>
+  </mat-card>
+
+  <p>이메일</p>
+  
+  <mat-card class="profile-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>학력</mat-card-title>
+      <mat-card-subtitle>전북대학교 IT정보공학과</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>2019.03 ~ 2025.02</p>
+      <p>(졸업예정)</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>Learn More</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <p>수상 경력과 자격증</p>
+  <!-- 테이블 생성 -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="organization">
+      <th mat-header-cell *matHeaderCellDef> Organization </th>
+      <td mat-cell *matCellDef="let element"> {{element.organization}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</div>

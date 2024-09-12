@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-interface Food {
+interface Language {
   value: string;
   viewValue: string;
 }
@@ -23,9 +23,8 @@ interface Food {
 export class AppComponent {
   title = 'portfolio';
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  languages: Language[] = [
+    {value: 'Korean', viewValue: '한국어'},
+    {value: 'English', viewValue: 'English'},
   ];
 }

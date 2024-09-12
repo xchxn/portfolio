@@ -1,36 +1,39 @@
 <div class="navContainer">
   <nav>
-    <ul>
-      <li>
-        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Home
-        </a>
-      </li>
-      <li>
-        <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
-          About
-        </a>
-      </li>
-      <li><a routerLink="/skills">
-          Skills
-        </a>
-      </li>
-      <li>
-        <a routerLink="/project">
-          Project
-        </a>
-      </li>
-      <li>
-        <a routerLink="/postings" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Postings
-        </a>
-      </li>
-      <li>
-        <a routerLink="/portfolio/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Contact
-        </a>
-      </li>
-    </ul>
+    <button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Home
+    </button>
+    <button routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button [matMenuTriggerFor]="aboutMenu">
+      About
+    </button>
+    <mat-menu #aboutMenu="matMenu">
+      <button mat-menu-item>About Me</button>
+      <button mat-menu-item>Profile</button>
+    </mat-menu>
+    <button routerLink="/skills" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button [matMenuTriggerFor]="skillsMenu">
+      Skills
+    </button>
+    <mat-menu #skillsMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button routerLink="/project" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button [matMenuTriggerFor]="projectMenu">
+      Project
+    </button>
+    <mat-menu #projectMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button routerLink="/postings" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button [matMenuTriggerFor]="postingsMenu">
+      Postings
+    </button>
+    <mat-menu #postingsMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Contact
+    </button>
   </nav>
 </div>
 <router-outlet></router-outlet>
@@ -40,20 +43,20 @@
     2. 슬라이드 토글 설정
     3. 언어 메뉴 드롭다운
   -->
-  <div>
+  <div class="FooterSettingButton">
     <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
     <mat-menu #aboveMenu="matMenu" yPosition="above">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
-      <!-- <p><mat-slide-toggle labelPosition="before">Dark Mode</mat-slide-toggle></p>
+      <p><mat-slide-toggle labelPosition="before">Dark Mode</mat-slide-toggle></p>
       <mat-form-field>
-        <mat-label>Favorite food</mat-label>
+        <mat-label>Set Language</mat-label>
         <mat-select>
-          @for (food of foods; track food) {
-          <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+          @for (language of languages; track language) {
+          <mat-option [value]="language.value">{{language.viewValue}}</mat-option>
           }
         </mat-select>
-      </mat-form-field> -->
+      </mat-form-field>
     </mat-menu>
   </div>
 </footer>
